@@ -19,7 +19,8 @@ const signupSchema = Joi.object({
     .messages({
       "string.empty": "Password is required",
       "string.min": "Password must be at least 8 characters",
-      "string.pattern.name": "Password must contain at least one {#name}",
+      "string.pattern.base": "Password must contain at least 1 uppercase letter and 1 special character",
+      "string.pattern.name": "Password must contain at least 1 uppercase letter and 1 special character",
       "any.required": "Password is required",
     }),
   college: Joi.string().required().messages({
