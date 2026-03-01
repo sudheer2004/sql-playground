@@ -23,7 +23,7 @@ export default function Signup() {
     setError("");
     setLoading(true);
     try {
-      await api.post("http://localhost:5003/auth/signup", formData);
+      await api.post("/auth/signup", formData);
       navigate("/login");
     } catch (err) {
       setError(err.response?.data?.message || "Signup failed");
