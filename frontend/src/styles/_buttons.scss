@@ -1,0 +1,54 @@
+@use "variables" as *;
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: none;
+  border-radius: $radius-sm;
+  cursor: pointer;
+  transition: background 0.15s, opacity 0.15s;
+  min-height: 44px; 
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &--execute {
+    background: $primary;
+    color: $white;
+
+    &:hover:not(:disabled) {
+      background: $primary-dark;
+    }
+  }
+
+  &--hint {
+    background: #e8e8e8;
+    color: #333;
+
+    &:hover:not(:disabled) {
+      background: #ddd;
+    }
+  }
+}
+
+.spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

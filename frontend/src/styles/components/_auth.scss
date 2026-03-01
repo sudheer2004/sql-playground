@@ -1,0 +1,116 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.auth-page {
+  min-height: 100vh;
+  @include flex-center;
+  background: $bg;
+  padding: $spacing-lg;
+
+  .auth-card {
+    width: 100%;
+    max-width: 400px;
+    background: $white;
+    border-radius: $radius-lg;
+    padding: 2.5rem 2rem;
+    box-shadow: $shadow-card;
+    border: 1px solid $border;
+
+    @include tablet {
+      padding: 2.5rem 2.5rem;
+    }
+  }
+
+  .auth-header {
+    @include flex-center;
+    gap: $spacing-sm;
+    margin-bottom: $spacing-lg;
+    justify-content: flex-start;
+
+    h1 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: $dark;
+    }
+
+    .header-icon {
+      font-size: 1.3rem;
+    }
+  }
+
+  .auth-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: $dark;
+    margin-bottom: $spacing-xs;
+  }
+
+  .auth-subtitle {
+    color: $text-muted;
+    font-size: 0.85rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .auth-error {
+    padding: 0.6rem 0.75rem;
+    background: $error-bg;
+    border: 1px solid $error-border;
+    border-radius: $radius-sm;
+    color: $error-text;
+    font-size: 0.8rem;
+    margin-bottom: $spacing-sm;
+  }
+
+  .auth-form {
+    @include flex-column;
+    gap: 0.85rem;
+  }
+
+  .auth-label {
+    @include flex-column;
+    gap: 0.3rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #333;
+  }
+
+  .auth-input {
+    padding: 0.6rem 0.75rem;
+    font-size: 0.85rem;
+    border: 1px solid $border-dark;
+    border-radius: $radius-sm;
+    background: #fafbfc;
+    color: $dark;
+    transition: border-color 0.15s;
+    font-weight: 400;
+    min-height: 44px; 
+
+    &:focus {
+      @include focus-ring;
+    }
+  }
+
+  .auth-btn {
+    width: 100%;
+    justify-content: center;
+    margin-top: $spacing-sm;
+    padding: 0.65rem;
+    min-height: 44px; 
+  }
+
+  .auth-footer {
+    text-align: center;
+    font-size: 0.82rem;
+    color: $text-muted;
+    margin-top: 1.25rem;
+  }
+
+  .auth-link {
+    color: $primary;
+    font-weight: 600;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
